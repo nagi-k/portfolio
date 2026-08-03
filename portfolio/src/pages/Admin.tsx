@@ -9,18 +9,14 @@ export function Admin() {
 
     import('decap-cms-app').then((CMS) => {
       const base = import.meta.env.BASE_URL || '/';
-      const repo = import.meta.env.VITE_GITHUB_REPO || 'yourname/yourname-portfolio';
       const branch = import.meta.env.VITE_GITHUB_BRANCH || 'main';
       const siteUrl = import.meta.env.VITE_SITE_URL || window.location.origin;
 
       CMS.default.init({
         config: {
           backend: {
-            name: 'github',
-            repo,
+            name: 'git-gateway',
             branch,
-            base_url: siteUrl,
-            auth_scope: 'repo',
           },
           media_folder: 'public/uploads',
           public_folder: `${base.replace(/\/$/, '')}/uploads`,
