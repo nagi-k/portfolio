@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>你的名字 | 作品集</title>
     <meta name="description" content="高端工业设计与交互设计作品集" />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      // 配置 Netlify Identity API 地址（创建 Netlify 站点后替换为实际地址）
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init({
-          APIUrl: 'https://portfolio-nagi-k.netlify.app/.netlify/identity'
-        });
-      }
-    </script>
     <script>
       // GitHub Pages SPA 路由恢复：404.html 会把原始路径写入 ?p=...
       (function () {
@@ -33,5 +24,14 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // 配置 Netlify Identity API 地址
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init({
+          APIUrl: 'https://portfolio-nagi-k.netlify.app/.netlify/identity'
+        });
+      }
+    </script>
   </body>
 </html>
