@@ -1,0 +1,129 @@
+/* 思源黑体与 Inter 通过 Google Fonts 加载 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-stone-50: #fafaf9;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-700: #44403c;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
+  --color-charcoal: #1a1a1a;
+  --color-accent: #1e3a5f;
+  --color-accent-light: #2a4d7a;
+
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fafaf9;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 富文本渲染样式 */
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3,
+.prose-custom h4 {
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose-custom h1 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+.prose-custom h2 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.prose-custom h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.prose-custom p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: #44403c;
+}
+
+.prose-custom ul,
+.prose-custom ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-custom li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+  color: #44403c;
+}
+
+.prose-custom img {
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+.prose-custom a {
+  color: #1e3a5f;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.prose-custom a:hover {
+  color: #2a4d7a;
+}
+
+.prose-custom blockquote {
+  border-left: 2px solid #1e3a5f;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #57534e;
+  font-style: italic;
+}
+
+/* 滚动揭示动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}

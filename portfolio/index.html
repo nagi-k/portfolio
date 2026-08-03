@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>你的名字 | 作品集</title>
+    <meta name="description" content="高端工业设计与交互设计作品集" />
+    <script>
+      // GitHub Pages SPA 路由恢复：404.html 会把原始路径写入 ?p=...
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirectPath = params.get('p');
+        if (redirectPath) {
+          params.delete('p');
+          const base = (window.location.pathname || '/').replace(/\/$/, '');
+          const remaining = params.toString();
+          const url = base + '/' + redirectPath + (remaining ? '?' + remaining : '') + window.location.hash;
+          window.history.replaceState(null, '', url);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

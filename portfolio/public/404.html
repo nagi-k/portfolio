@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // 配置你的 GitHub Pages base 路径：
+      // - 用户/组织主页或自定义域名：'/'
+      // - 项目主页（仓库名为 yourname-portfolio）：'/yourname-portfolio/'
+      const BASE = '/';
+
+      const path = window.location.pathname;
+      const base = BASE.replace(/\/$/, '');
+      const relativePath = path.replace(new RegExp('^' + (base || '') + '/?'), '/');
+      const query = window.location.search;
+      const hash = window.location.hash;
+      const redirect = (base || '') + '/?p=' + encodeURIComponent(relativePath.slice(1) + query) + hash;
+      window.location.replace(redirect);
+    </script>
+  </head>
+  <body>
+    <p>正在跳转...</p>
+  </body>
+</html>
