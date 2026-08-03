@@ -12,6 +12,12 @@ export function Admin() {
       const branch = import.meta.env.VITE_GITHUB_BRANCH || 'main';
       const siteUrl = import.meta.env.VITE_SITE_URL || window.location.origin;
 
+      // Decap CMS 会自己挂载到 document.body，初始化后隐藏 React root 的加载占位
+      const hideReactRoot = () => {
+        const root = document.getElementById('root');
+        if (root) root.style.display = 'none';
+      };
+
       CMS.default.init({
         config: {
           backend: {
@@ -119,6 +125,8 @@ export function Admin() {
           ],
         },
       });
+
+      hideReactRoot();
     });
   }, []);
 
