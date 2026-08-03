@@ -1,0 +1,2 @@
+# Netlify SPA 路由回退：所有路径都返回 index.html，由 React Router 处理
+/*    /index.html   200
